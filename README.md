@@ -8,7 +8,7 @@
 
 
 
-
+'''python
 from fastapi import FastAPI, Depends, HTTPException,status
 from fastapi.security import HTTPBasic,HTTPBasicCredentials
 import secrets
@@ -31,6 +31,7 @@ def login(credent:HTTPBasicCredentials=Depends(security)):
             headers={"WWW-Authenticate":"Basic"},
         )
     return {"message":f"welcome,{credent.username}!"}
+
 
 
 
